@@ -1,159 +1,166 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<html>
-
-<head>
-   
-    <meta charset="utf-8">
-    <meta name="description" content="this is an website">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>my website</title>
-
-</head>
-
-<body>
-
-<header>
-<nav>
-
-</nav>
-</header>
-
-<main>
-<article>
-    <section>
-
-    </section>
-
-    <section>
-<aside>
-    
-</aside>
-    </section>
-
-    <section>
-
-    </section>
-</article>
-</main>
-
-<footer>
-
-</footer>
+<style>
+    #formTable {
+        border: 3px solid black;
+        border-collapse: separate;
+        padding: 10px;
+    }
 
 
+    #formTable table {
+        border: 3px;
+        border-color: black;
+        border-style: solid;
+        padding: 10px;
+    }
+
+    #formTable tr,
+    #formTable td {
+
+        border: 3px;
+        border-color: black;
+        border-style: solid;
+
+    }
+
+    .save-cell {
+        padding: 0;
+    }
+
+    .save-btn {
+        width: 100%;
+        height: 100%;
+        display: block;
+
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        background-color: rgb(139, 139, 203);
+
+    }
+     #tableManupulate {
+        border: 3px solid black;
+        border-collapse: separate;
+        padding: 5px;
+    }
+    #tableManupulate table{
+        border: 3px;
+        border-color: black;
+        border-style: double;
+        padding: 10px;
+    }
+    #tableManupulate tr, #tableManupulate td ,#tableManupulate th{
+        border: 3px;
+        border-color: black;
+        border-style: double;
+    }
+</style>
+<center>
+
+
+    <h1>Student Form</h1>
+    <form onsubmit="addData(event)">
+
+        <table id="formTable">
+
+            <tr>
+                <td>Name:</td>
+                <td><input id="name" type="text" placeholder="enter your name" required></td>
+            </tr>
+
+            <tr>
+                <td>Age:</td>
+                <td><input id="age" type="number"></td>
+            </tr>
+
+            <tr>
+                <td>Gender:</td>
+                <td><input type="radio" name="gender">Male <input type="radio" name="gender">Female
+            </tr>
+
+
+            <tr>
+                <td>Email:</td>
+                <td><input id="email" type="email" placeholder="enter your email"></td>
+            </tr>
+
+
+            <tr>
+                <td>Select a course:</td>
+                <td>
+                    <select id="course">
+                        <option>Python</option>
+                        <option>java script</option>
+                    </select>
+                </td>
+            </tr>
+
+
+            <tr>
+
+                <td colspan="2" class="save-cell">
+                    <button  class="save-btn">Save</button>
+                </td>
+
+            </tr>
 
 
 
-    <h1> hello aps</h1>
-<p>
-   <small> dhbkjd</small> that is an bla bla 
-   <b><i>bkjfdsdsffbkj
+        </table>
 
-   </i></b>
-   
-    <p>
-         h<sub>2</sub>o  10<sup>2</sup><!--sub script and super script-->
-        </p>
-
-</p>
-
-<input type="text" value="enter username"/>
-<input/>
-
-<!--this is a comment-->
-<p style="color: blue; background-color:  yellow;">
-
- colouring
-
-</p>
-<a href="https://www.google.com" target="_blank"> <h1> google's homepage</h1> </a>
-<a href="Page2.html" target="_blank"> veiw page</a>
-<p><a href="dir 1/page3.html" target="_blank">view page 3</a></p>
-<a href="dir 1/pic.jpg " target="_blank"> pic </a>
-
-<p><img height="300" src="dir 1/pic.jpg" alt="pic"/> </p>
+    </form>
 
 
-
-<p> <img  width="200"  src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg" alt="pic"/></p> <!--img from websites-->
-
-<video width="200" src="Thillai.mp4"  controls>vedio</video>
-
-
-<input type="text" value="enter username"/>
-<input/>
-
-<ul>
-    <li>
-        apple
-    </li>
-    <li>
-        org
-    </li>
-    <li>
-        mag
-    </li>
-
-</ul>
-
-
-<ol  type="I">
-<li>
-        apple
-    </li>
-    <li>
-        org
-    </li>
-    <li>
-        mag
-    </li>
-
-
-</ol>
-
-
-<table>
-<caption> list of numbers</caption>
-     <tr>
-<td>   one</td>
-<td>
-    two
-</td>
-       </tr>
-      <tr>
-<td>
-    three
-</td>
-<td>
-    four
-</td>
-
-</tr>
-
-
+<table id="tableManupulate">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Course</th>
+        <th>Action</th>
+    </tr>
 </table>
 
-<input type="text" value="enter username"/>
-<p>
-<input type="password"/></p>
 
-<textarea rows="10" cols="30">
-    enter a para
-</textarea>
 
-<input type="date"/>
 
-<input type="email"/>
 
-<input type="file"/>
-<input type="checkbox"/>
-<input type="checkbox"/>
-<input name="button" type="radio"/>
-<input  name="button" type="radio"/>
-<input type="submit"/>
 
-</body>
+</center>
 
-</html>
+
+<script>
+function addData(event){
+event.preventDefault();
+    //event.preventDefault();
+var name = document.getElementById("name").value;
+var age =document.getElementById("age").value;
+var gender = document.querySelector('input[name="gender"]:checked').value;
+var email = document.getElementById("email").value;
+var course = document.getElementById("course").value;
+
+
+var tableManupulated = document.getElementById("tableManupulate");
+ var  rowManupulated = tableManupulated.insertRow();
+
+   rowManupulated.insertCell(0).innerHTML = name;
+    rowManupulated.insertCell(1).innerHTML = age;
+     rowManupulated.insertCell(2).innerHTML =gender;
+      rowManupulated.insertCell(3).innerHTML =email;
+       rowManupulated.insertCell(4).innerHTML =course;
+var actionCell = rowManupulated.insertCell(5);
+actionCell.innerHTML = "<button onclick='deleteRow(this)'>Delete</button>";
+      document.querySelector("form").reset();
+
+     
+} 
+function deleteRow(btn) {
+    var row = btn.parentNode.parentNode;
+    row.remove();
+}
+
+</script>
